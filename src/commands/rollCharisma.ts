@@ -3,10 +3,10 @@ import { Command } from "../interfaces/Command";
 import { GetCharacater } from "../utils/getCharacter";
 import { RollStat } from "../utils/rollStat";
 
-export const rollStrength: Command = {
+export const rollCharisma: Command = {
     data: new SlashCommandBuilder()
-        .setName("str")
-        .setDescription("Do a Strength roll.")
+        .setName("cha")
+        .setDescription("Do a Charisma roll.")
         .addStringOption((option) => 
             option
                 .setName("modifier")
@@ -23,7 +23,7 @@ export const rollStrength: Command = {
         const playerId = user.id
 
         const character = await GetCharacater(playerId, channelId)
-        const check = RollStat(character.character, 'Strength', modifier)
+        const check = RollStat(character.character, 'Charisma', modifier)
 
         await interaction.editReply({ embeds: [check.embedResult] })
     }

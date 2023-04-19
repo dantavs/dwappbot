@@ -1,13 +1,37 @@
 import { EmbedBuilder } from "@discordjs/builders";
 
-export function RollStat(character: any, stat: string, modifier: number){
+export function RollStat(character: any, statName: string, modifier: number){
 
-    const strength = character.character ? character.character.modStr : 0
+    let statValue = 0
+
+    if (character){
+
+        switch (statName){
+            case "Strength":
+                statValue = character.modStr
+                break;
+            case "Dexterity":
+                statValue = character.modDex
+                break;
+            case "Constitution":
+                statValue = character.modCon
+                break;
+            case "Intelligence":
+                statValue = character.modInt
+                break;
+            case "Wisdom":
+                statValue = character.modWis
+                break;
+            case "Charisma":
+                statValue = character.modCha
+                break;
+        }
+    }
 
     const die1 = Math.floor(Math.random() * 6 )+1; 
     const die2 = Math.floor(Math.random() * 6 )+1;
     
-    const result = die1 + die2 + modifier + strength
+    const result = die1 + die2 + modifier + statValue
 
     let textResult = ""
     let color = 0x0099FF
@@ -27,10 +51,10 @@ export function RollStat(character: any, stat: string, modifier: number){
 
     const embedResult = new EmbedBuilder()
     .setColor(color)
-    .setTitle(`Roll + ${stat}`)
+    .setTitle(`Roll + ${statName}`)
     .addFields(
         {name: textResult , value: result.toString() },
-        {name: 'Result', value:`2d6: ${die1} + ${die2} \nStat (${stat}): ${strength} \nModifier: ${modifier}`},
+        {name: 'Result', value:`2d6: ${die1} + ${die2} \nStat (${statName}): ${statValue} \nModifier: ${modifier}`},
     )
 
     return {
