@@ -1,26 +1,16 @@
-import Fastify from "fastify";
-import cors from '@fastify/cors'
 import { PrismaClient } from '@prisma/client'
+import Discord from 'discord.js'
+import { IntentOptions } from './IntentOptions';
+import { onReady } from './events/onReady';
+import { onInteraction } from './events/onInteraction';
 
-const app = Fastify()
 const prisma = new PrismaClient()
 
-app.register(cors)
-
-app.get('/', async () => {
-    const habits = await prisma.habit.findMany({
-        where: {
-            title: {
-                startsWith: 'Drink'
-            }
-        }
+(async () => {
+    const BOT: Discord.Client = new Discord.Client({intents:IntentOptions});
+    BOT.on("ready", async () => await onReady(BOT));
+    BOT.on("interactionCreate", async (interaction) => {
+        await onInteraction(interaction)
     })
-
-    return habits
-})
-
-app.listen({
-    port: 3333
-}).then(() => {
-    console.log('HTTP Server running!')
-})
+    await BOT.login (process.env.BOT_TOKEN)
+})()
