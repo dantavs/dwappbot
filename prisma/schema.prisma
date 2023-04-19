@@ -17,3 +17,32 @@ model Habit {
 
   @@map("habits")
 }
+
+model Character {
+  id            String @id @default(uuid())
+  name          String
+  race          String
+  class         String
+  level         Int
+  experience    Int
+  hitPoints     Int
+  alignment     String
+  playerId      String
+  playerName    String
+  strength      Int @default(0)
+  modStr        Int @default(0)
+  dexterity     Int @default(0)
+  modDex        Int @default(0)
+  constitution  Int @default(0)
+  modCon        Int @default(0)
+  intelligence  Int @default(0)
+  modInt        Int @default(0)
+  wisdom        Int @default(0)
+  modWis        Int @default(0)
+  charisma      Int @default(0)
+  modCha        Int @default(0)
+  channelId     String
+  createdAt     DateTime @default(now())
+
+  @@map("characters")
+}

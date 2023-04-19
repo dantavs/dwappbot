@@ -1,11 +1,12 @@
 import { SlashCommandBuilder  } from "discord.js";
 import { Command } from "../interfaces/Command";
 import { EmbedBuilder } from 'discord.js'
+import { GetCharacater } from "../utils/getCharacter";
 
-export const dwroll: Command = {
+export const rollStrength: Command = {
     data: new SlashCommandBuilder()
-        .setName("dwr")
-        .setDescription("Do a Dungeon World roll.")
+        .setName("str")
+        .setDescription("Do a Strength roll.")
         .addStringOption((option) => 
             option
                 .setName("modifier")
@@ -17,12 +18,19 @@ export const dwroll: Command = {
         
         const modifierString = interaction.options.getString('modifier')
 
+        const { channelId, user } = interaction
+        const playerId = user.id
+
+        const character = await GetCharacater(playerId, channelId)
+
+        const strength = character.character ? character.character.modStr : 0
+
         let modifier = modifierString ? parseInt(modifierString) : 0
 
         const die1 = Math.floor(Math.random() * 6 )+1; 
         const die2 = Math.floor(Math.random() * 6 )+1;
         
-        const result = die1 + die2 + modifier
+        const result = die1 + die2 + modifier + strength
 
         let textResult = ""
         let color = 0x0099FF
@@ -42,10 +50,10 @@ export const dwroll: Command = {
 
         const embedResult = new EmbedBuilder()
             .setColor(color)
-            .setTitle('Dungeon World roll')
+            .setTitle('Roll + Strength')
             .addFields(
                 {name: textResult , value: result.toString() },
-                {name: 'Result', value:`2d6: ${die1} + ${die2} \n Modifier: ${modifier}`},
+                {name: 'Result', value:`2d6: ${die1} + ${die2} \nStat: ${strength} \nModifier: ${modifier}`},
             )
 
         await interaction.editReply({ embeds: [embedResult] })
