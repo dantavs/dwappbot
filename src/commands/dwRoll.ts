@@ -42,7 +42,7 @@ export const dwroll: Command = {
 
         const embedResult = new EmbedBuilder()
             .setColor(color)
-            .setTitle('Dungeon World roll')
+            .setTitle('Dungeon World roll!')
             .addFields(
                 {name: textResult , value: result.toString() },
                 {name: 'Result', value:`2d6: ${die1} + ${die2} \n Modifier: ${modifier}`},

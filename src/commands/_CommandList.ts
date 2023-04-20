@@ -6,7 +6,10 @@ import { rollDexterity } from "./rollDexterity";
 import { rollIntelligence } from "./rollIntelligence";
 import { rollStrength } from "./rollStrength";
 import { rollWisdom } from "./rollWisdom";
+import { updateHP } from "./updateHP";
 
 export const CommandList: Command[] = [
-    dwroll, rollStrength, rollDexterity, rollConstitution, rollIntelligence, rollWisdom, rollCharisma
+    dwroll,
+    updateHP, 
+    rollStrength, rollDexterity, rollConstitution, rollIntelligence, rollWisdom, rollCharisma,
 ]
