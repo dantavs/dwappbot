@@ -55,7 +55,7 @@ export async function UpdateStat(character: any, stat: string, modifier: number)
             break;
         case 'HP':
             currentStat = hitPoints
-            newStat = hitPoints + modifier
+            newStat = hitPoints + modifier > character.maxHP ? character.maxHP : hitPoints + modifier
             hitPoints = newStat
             break;
         case 'Level':
