@@ -25,7 +25,7 @@ export const dwroll: Command = {
         const result = die1 + die2 + modifier
 
         let textResult = ""
-        let color = 0x0099FF
+        let color = 0x990000
 
         if (result > 9){
             textResult = "Strong Success"
@@ -36,7 +36,6 @@ export const dwroll: Command = {
                 color = 0xf1c232
             }else{
                 textResult = "Miss. Gain +1 XP."
-                color = 0xf1c232
             }
         }
 
