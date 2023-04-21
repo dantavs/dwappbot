@@ -42,6 +42,8 @@ model Character {
   modWis        Int @default(0)
   charisma      Int @default(0)
   modCha        Int @default(0)
+  ammo          Int @default(0)
+  ration        Int @default(0)
   portrait      String @default("")
   channelId     String
   createdAt     DateTime @default(now())

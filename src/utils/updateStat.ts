@@ -13,6 +13,8 @@ export async function UpdateStat(character: any, stat: string, modifier: number)
     let hitPoints = character.hitPoints
     let experience = character.experience
     let level = character.level
+    let ammo = character.ammo
+    let ration = character.ration
 
     let currentStat = 0
     let newStat = 0
@@ -63,6 +65,16 @@ export async function UpdateStat(character: any, stat: string, modifier: number)
             newStat = level + modifier
             level = newStat
             break;
+        case 'Ammo':
+            currentStat = ammo
+            newStat = ammo + modifier
+            ammo = newStat
+            break;
+        case 'Ration':
+            currentStat = ration
+            newStat = ration + modifier
+            ration = newStat
+            break;
     }
 
     await prisma.character.update({
@@ -78,7 +90,9 @@ export async function UpdateStat(character: any, stat: string, modifier: number)
             charisma,
             level,
             experience,
-            hitPoints
+            hitPoints,
+            ammo,
+            ration
         }
     })
 
