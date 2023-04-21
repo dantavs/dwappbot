@@ -6,3 +6,6 @@ node_modules/
 
 #dist
 dist/
+
+#db
+./prisma/db.dev
