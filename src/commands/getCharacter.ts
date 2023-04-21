@@ -18,7 +18,6 @@ export const GetChar: Command = {
 
         if (character.character){
 
-        
             embedResult
                 .setColor(0x0099FF)
                 .setTitle(`${character.character.name} - ${character.character.race}, ${character.character.class}`)
@@ -38,9 +37,14 @@ export const GetChar: Command = {
                 { name: 'XP', value: character.character.experience.toString(), inline: true},
                 )
             
-        if (character.character.portrait != ""){
-            embedResult.setImage(character.character.portrait)
-        }
+            if (character.character.portrait != ""){
+                embedResult.setImage(character.character.portrait)
+            }
+        }else{
+            embedResult
+                .setColor(0x0099FF)
+                .setTitle(`Show PC`)
+                .addFields({name: character.message, value: ' '})
         }
 
         await interaction.editReply({ embeds: [embedResult] })
