@@ -3,6 +3,11 @@ import { prisma } from "../server";
 
 export async function UpdateStat(character: any, stat: string, modifier: number){
 
+    let notanumber: any
+    notanumber = "null"
+    let isanumber = isNaN(notanumber)? 1 : notanumber
+    console.log("Is a number: ", isanumber)
+
 
     let strength = character.strength
     let dexterity = character.dexterity
@@ -13,7 +18,7 @@ export async function UpdateStat(character: any, stat: string, modifier: number)
     let hitPoints = character.hitPoints
     let experience = character.experience
     let level = character.level
-    let ammo = character.ammo
+    let ammo =  character.ammo
     let ration = character.ration
 
     let currentStat = 0

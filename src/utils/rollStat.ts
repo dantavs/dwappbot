@@ -51,14 +51,21 @@ export function RollStat(character: any, statName: string, modifier: number){
 
     const embedResult = new EmbedBuilder()
     .setColor(color)
-    .setTitle(`${character.name} - Roll + ${statName}`)
     .addFields(
         {name: textResult , value: result.toString() },
         {name: 'Result', value:`2d6: ${die1} + ${die2} \nStat (${statName}): ${statValue} \nModifier: ${modifier}`},
     )
 
-    if (character.portrait){
-        embedResult.setThumbnail(character.portrait)
+    if (character){
+        if (character.portrait){
+            embedResult.setThumbnail(character.portrait)
+        }
+        
+        if (character.name){
+            embedResult.setTitle(`${character.name} - Roll + ${statName}`)
+        }else{
+            embedResult.setTitle(`Roll + ${statName}`)
+        }
     }
 
     return {
