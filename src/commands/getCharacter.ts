@@ -21,7 +21,7 @@ export const GetChar: Command = {
         
             embedResult
                 .setColor(0x0099FF)
-                .setTitle(character.character.name)
+                .setTitle(`${character.character.name} - ${character.character.race}, ${character.character.class}`)
                 .addFields(
                 { name: 'Strength', value: `${character.character.strength.toString()}(${character.character.modStr})`, inline: true },
                 { name: 'Dexterity', value: `${character.character.dexterity.toString()}(${character.character.modDex})`, inline: true},

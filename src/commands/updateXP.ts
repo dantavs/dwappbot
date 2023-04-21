@@ -1,4 +1,4 @@
-import { SlashCommandBuilder  } from "discord.js";
+import { EmbedBuilder, SlashCommandBuilder  } from "discord.js";
 import { Command } from "../interfaces/Command";
 import { GetCharacater } from "../utils/getCharacter";
 import { UpdateStat } from "../utils/updateStat";
@@ -21,10 +21,22 @@ export const updateXP: Command = {
 
         const { channelId, user } = interaction
         const playerId = user.id
+        const stat = 'XP'
 
         const character = await GetCharacater(playerId, channelId)
-        const check = await UpdateStat(character.character, 'XP', modifier)
+        const check = await UpdateStat(character.character, stat, modifier)
 
-        await interaction.editReply({ embeds: [check.embedResult] })
+        let embedResult = new EmbedBuilder()
+
+        if (character.character){
+            const check = await UpdateStat(character.character, stat, modifier)
+            embedResult = check.embedResult
+        }else{
+            embedResult
+            .setTitle(`Update ${stat}`)
+            .addFields({name: 'There is not any registered character in this channel', value: ' '})
+        }
+
+        await interaction.editReply({ embeds: [embedResult] })
     }
 }
