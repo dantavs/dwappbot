@@ -21,6 +21,7 @@ export const help: Command = {
         let basicMovesCommandsList = "**/matar** *<modifier: optional>* : Executar o movimento básico Matar e Pilhar\n"
         basicMovesCommandsList += "**/disparar** *<modifier: optional>* : Executar o movimento básico Disparar\n"
         basicMovesCommandsList += "**/negociar** *<modifier: optional>* : Executar o movimento básico Negociar\n"
+        basicMovesCommandsList += "**/defender** *<modifier: optional>* : Executar o movimento básico Defender\n"
         
         let updateCommandsList = "**/updthp** *<modifier: required>* : Add or subtract the Modifier of Hit Points value, retricted by the maximum value\n"
         updateCommandsList += "**/updtxp** *<modifier: required>* : Add or subtract the Modifier of the PC's XP\n"
