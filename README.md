@@ -13,6 +13,9 @@ Discord bot to support Dungeon World plays
 /wis <modifier: optional> : Roll + Wisdom + Modifier (if there is no PC registered, it assumed 0 as Wisdom value)
 /cha <modifier: optional> : Roll + Charisma + Modifier (if there is no PC registered, it assumed 0 as Charisma value)
 
+## Movimentos Básicos (Funciona melhor com personagem criado no canal)
+/matar <modifier: opcional> : Executa o movimento básico Matar e Pilhar
+
 ## Update commands (Requires character created)
 /updthp <modifier: required> : Add or subtract the Modifier of Hit Points value, retricted by the maximum value
 /updtxp <modifier: required> : Add or subtract the Modifier of the PC's XP

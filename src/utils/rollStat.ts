@@ -1,5 +1,6 @@
 import { EmbedBuilder } from "@discordjs/builders";
 import { checkRoll } from "./checkRoll";
+import { UpdateStat } from "./updateStat";
 
 export function RollStat(character: any, statName: string, modifier: number){
 
@@ -38,6 +39,9 @@ export function RollStat(character: any, statName: string, modifier: number){
         {name: 'Result', value:`2d6: ${roll.die1} + ${roll.die2} \nStat (${statName}): ${statValue} \nModifier: ${modifier}`},
     )
 
+    const cardColor = roll.cardColor
+    const textResult = roll.textResult
+
     if (character){
         if (character.portrait){
             embedResult.setThumbnail(character.portrait)
@@ -48,10 +52,12 @@ export function RollStat(character: any, statName: string, modifier: number){
         }else{
             embedResult.setTitle(`Roll + ${statName}`)
         }
-    }
 
-    const cardColor = roll.cardColor
-    const textResult = roll.textResult
+        if (textResult === "Miss"){
+            UpdateStat(character, "XP", 1)
+            embedResult.addFields({name: "+1 XP", value: `${character.name} ganhou 1 de XP, totalizando ${character.experience}`})
+        }
+    }
 
     return {
         embedResult,

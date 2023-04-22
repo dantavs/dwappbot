@@ -20,6 +20,8 @@ export const help: Command = {
         statCommandsList += "**/wis** *<modifier: optional>* : Roll + Wisdom + Modifier (if there is no PC registered, it assumed 0 as Wisdom value\n"
         statCommandsList += "**/cha** *<modifier: optional>* : Roll + Charisma + Modifier (if there is no PC registered, it assumed 0 as Charisma value\n"
         
+        let basicMovesCommandsList = "**/matar** *<modifier: optional>* : Executar o movimento básico Matar e Pilhar\n"
+        
         let updateCommandsList = "**/updthp** *<modifier: required>* : Add or subtract the Modifier of Hit Points value, retricted by the maximum value\n"
         updateCommandsList += "**/updtxp** *<modifier: required>* : Add or subtract the Modifier of the PC's XP\n"
         updateCommandsList += "**/updtammo** *<modifier: required>* : Add or subtract the Modifier of the PC's Ammo\n"
@@ -30,6 +32,7 @@ export const help: Command = {
             .setTitle("Dwapp Bot - Help")
             .addFields({name: 'Main commands', value: commandsList})
             .addFields({name: 'Stats commands *(Better with character created in the channel)*', value: statCommandsList})
+            .addFields({name: 'Basic Movements commands *(Better with character created in the channel)*', value: basicMovesCommandsList})
             .addFields({name: 'Update commands *(Requires character created)*', value: updateCommandsList})
 
         await interaction.editReply({ embeds: [embedResult] })

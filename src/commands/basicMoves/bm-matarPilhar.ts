@@ -37,7 +37,7 @@ export const bmMatarPilhar: Command = {
                 moveResult.addFields({name: " ", value: "Cause dano ao adversário, e ele fará um ataque contra você."})
                 break;
             case "Miss":
-                moveResult.addFields({name: " ", value: "Ganhe +1 XP. O Mestre fará um Movimento do Mestre."})
+                moveResult.addFields({name: " ", value: "O Mestre fará um Movimento do Mestre."})
                 break;
         }
 
