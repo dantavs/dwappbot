@@ -6,12 +6,12 @@ Discord bot to support Dungeon World plays
 /pc : Show the PC registered for the user
 
 ## Stats commands (Better with character created in the channel)
-/str <modifier: optional> : Roll + Strength + Modifier (if there is no PC registered, it assumed 0 as Strength value
-/dex <modifier: optional> : Roll + Dexterity + Modifier (if there is no PC registered, it assumed 0 as Dexterity value
-/con <modifier: optional> : Roll + Constitution + Modifier (if there is no PC registered, it assumed 0 as Constitution value
-/int <modifier: optional> : Roll + Intelligence + Modifier (if there is no PC registered, it assumed 0 as Intelligence value
-/wis <modifier: optional> : Roll + Wisdom + Modifier (if there is no PC registered, it assumed 0 as Wisdom value
-/cha <modifier: optional> : Roll + Charisma + Modifier (if there is no PC registered, it assumed 0 as Charisma value
+/str <modifier: optional> : Roll + Strength + Modifier (if there is no PC registered, it assumed 0 as Strength value)
+/dex <modifier: optional> : Roll + Dexterity + Modifier (if there is no PC registered, it assumed 0 as Dexterity value)
+/con <modifier: optional> : Roll + Constitution + Modifier (if there is no PC registered, it assumed 0 as Constitution value)
+/int <modifier: optional> : Roll + Intelligence + Modifier (if there is no PC registered, it assumed 0 as Intelligence value)
+/wis <modifier: optional> : Roll + Wisdom + Modifier (if there is no PC registered, it assumed 0 as Wisdom value)
+/cha <modifier: optional> : Roll + Charisma + Modifier (if there is no PC registered, it assumed 0 as Charisma value)
 
 ## Update commands (Requires character created)
 /updthp <modifier: required> : Add or subtract the Modifier of Hit Points value, retricted by the maximum value
