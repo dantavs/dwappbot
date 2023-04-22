@@ -15,6 +15,8 @@ Discord bot to support Dungeon World plays
 
 ## Movimentos Básicos (Funciona melhor com personagem criado no canal)
 /matar <modifier: opcional> : Executa o movimento básico Matar e Pilhar
+/disparar <modifier: opcional> : Executa o movimento básico Disparar
+/negociar <modifier: opcional> : Executa o movimento básico Negociar
 
 ## Update commands (Requires character created)
 /updthp <modifier: required> : Add or subtract the Modifier of Hit Points value, retricted by the maximum value

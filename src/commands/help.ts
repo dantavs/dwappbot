@@ -19,6 +19,8 @@ export const help: Command = {
         statCommandsList += "**/cha** *<modifier: optional>* : Roll + Charisma + Modifier (if there is no PC registered, it assumed 0 as Charisma value\n"
         
         let basicMovesCommandsList = "**/matar** *<modifier: optional>* : Executar o movimento básico Matar e Pilhar\n"
+        basicMovesCommandsList += "**/disparar** *<modifier: optional>* : Executar o movimento básico Disparar\n"
+        basicMovesCommandsList += "**/negociar** *<modifier: optional>* : Executar o movimento básico Negociar\n"
         
         let updateCommandsList = "**/updthp** *<modifier: required>* : Add or subtract the Modifier of Hit Points value, retricted by the maximum value\n"
         updateCommandsList += "**/updtxp** *<modifier: required>* : Add or subtract the Modifier of the PC's XP\n"
