@@ -21,6 +21,7 @@ Discord bot to support Dungeon World plays
 /falar <modifier: opcional> : Executa o movimento básico Falar Difícil
 /discernir <modifier: opcional> : Executa o movimento básico Discernir Realidades
 /ajudar <modifier: opcional> : Executa o movimento básico Ajudar ou Interferir
+/desafiar<atributo> <modifier: opcional> : Executa o movimento básico Desafiar o Perigo. A última letra do comando, é o atributo a ser utilizado. Ex.: /desafiarf (Força)
 
 ## Update commands (Requires character created)
 /updthp <modifier: required> : Add or subtract the Modifier of Hit Points value, retricted by the maximum value

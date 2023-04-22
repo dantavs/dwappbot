@@ -19,10 +19,17 @@ import { updateAmmo } from "./updateAmmo";
 import { updateHP } from "./updateHP";
 import { updateRation } from "./updateRation";
 import { updateXP } from "./updateXP";
+import { bmDesafiarPerigoD } from "./basicMoves/bm-DesafiarPerigo-d";
+import { bmDesafiarPerigoC } from "./basicMoves/bm-desafiarPerigo-con";
+import { bmDesafiarPerigoI } from "./basicMoves/bm-desafiarPerigo-i";
+import { bmDesafiarPerigoS } from "./basicMoves/bm-desafiarPerigo-s";
+import { bmDesafiarPerigoCar } from "./basicMoves/bm-desafiarPerigo-car";
+import { bmDesafiarPerigoF } from "./basicMoves/bm-DesafiarPerigo-f";
 
 export const CommandList: Command[] = [
     dwroll, GetChar, help,
     updateHP, updateXP, updateAmmo, updateRation,
-    bmMatarPilhar, bmDisparar, bmNegociar, bmDefender, bmFalarDificil, bmDiscernirRealidades, bmAjudarInterferir,
+    bmMatarPilhar, bmDisparar, bmNegociar, bmDefender, bmFalarDificil, bmDiscernirRealidades, bmAjudarInterferir, 
+    bmDesafiarPerigoF, bmDesafiarPerigoD, bmDesafiarPerigoC, bmDesafiarPerigoI, bmDesafiarPerigoS, bmDesafiarPerigoCar,
     rollStrength, rollDexterity, rollConstitution, rollIntelligence, rollWisdom, rollCharisma,
 ]

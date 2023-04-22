@@ -27,6 +27,7 @@ export const help: Command = {
         basicMovesCommandsList += "**/falar** : Executar o movimento básico Falar Difícil\n"
         basicMovesCommandsList += "**/discernir** : Executar o movimento básico Discernir Realidades\n"
         basicMovesCommandsList += "**/ajudar** : Executar o movimento básico Discernir Realidades\n"
+        basicMovesCommandsList += "**/desafiar<f>** : Executar o movimento básico Discernir Realidades. A última letra do comando é o atributo a ser utilizado. Ex.: /desafiarf \n"
         
         let updateCommandsList = "*<command> <modifier: required>*\n"
         updateCommandsList += "**/updthp** : Add or subtract the Modifier of Hit Points value, retricted by the maximum value\n"
