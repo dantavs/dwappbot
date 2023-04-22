@@ -19,6 +19,7 @@ Discord bot to support Dungeon World plays
 /negociar <modifier: opcional> : Executa o movimento básico Negociar
 /defender <modifier: opcional> : Executa o movimento básico Defender
 /falar <modifier: opcional> : Executa o movimento básico Falar Difícil
+/discernir <modifier: opcional> : Executa o movimento básico Discernir Realidades
 
 ## Update commands (Requires character created)
 /updthp <modifier: required> : Add or subtract the Modifier of Hit Points value, retricted by the maximum value

@@ -23,6 +23,7 @@ export const help: Command = {
         basicMovesCommandsList += "**/negociar** *<modifier: optional>* : Executar o movimento básico Negociar\n"
         basicMovesCommandsList += "**/defender** *<modifier: optional>* : Executar o movimento básico Defender\n"
         basicMovesCommandsList += "**/falar** *<modifier: optional>* : Executar o movimento básico Falar Difícil\n"
+        basicMovesCommandsList += "**/discernir** *<modifier: optional>* : Executar o movimento básico Discernir Realidades\n"
         
         let updateCommandsList = "**/updthp** *<modifier: required>* : Add or subtract the Modifier of Hit Points value, retricted by the maximum value\n"
         updateCommandsList += "**/updtxp** *<modifier: required>* : Add or subtract the Modifier of the PC's XP\n"
@@ -34,7 +35,7 @@ export const help: Command = {
             .setTitle("Dwapp Bot - Help")
             .addFields({name: 'Main commands', value: commandsList})
             .addFields({name: 'Stats commands *(Better with character created in the channel)*', value: statCommandsList})
-            .addFields({name: 'Basic Movements commands *(Better with character created in the channel)*', value: basicMovesCommandsList})
+            .addFields({name: 'Basic Moves commands *(Better with character created in the channel)*', value: basicMovesCommandsList})
             .addFields({name: 'Update commands *(Requires character created)*', value: updateCommandsList})
 
         await interaction.editReply({ embeds: [embedResult] })
