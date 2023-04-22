@@ -15,7 +15,7 @@ export function checkRoll(modifier: number){
             textResult = "Partial Success"
             cardColor = 0xf1c232
         }else{
-            textResult = "Miss. Gain +1 XP."
+            textResult = "Miss"
         }
     }
 

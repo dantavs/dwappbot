@@ -1,4 +1,4 @@
-import { SlashCommandBuilder  } from "discord.js";
+import { EmbedBuilder, SlashCommandBuilder  } from "discord.js";
 import { Command } from "../../interfaces/Command";
 import { GetCharacater } from "../../utils/getCharacter";
 import { RollStat } from "../../utils/rollStat";
@@ -25,6 +25,22 @@ export const bmMatarPilhar: Command = {
         const character = await GetCharacater(playerId, channelId)
         const check = RollStat(character.character, 'Strength', modifier)
 
-        await interaction.editReply({ embeds: [check.embedResult] })
+        const moveResult = new EmbedBuilder()
+            .setTitle("Matar e Pilhar")
+            .setColor(check.cardColor)
+
+        switch(check.textResult){
+            case "Strong Success":
+                moveResult.addFields({name: " ", value: "Cause dano ao adversário e evite seu ataque. Opcionalmente, você pode causar +1d6 de dano, expondo-se ao contra ataque."})
+                break;
+            case "Partial Success":
+                moveResult.addFields({name: " ", value: "Cause dano ao adversário, e ele fará um ataque contra você."})
+                break;
+            case "Miss":
+                moveResult.addFields({name: " ", value: "Ganhe +1 XP. O Mestre fará um Movimento do Mestre."})
+                break;
+        }
+
+        await interaction.editReply({ embeds: [check.embedResult, moveResult] })
     }
 }

@@ -50,7 +50,12 @@ export function RollStat(character: any, statName: string, modifier: number){
         }
     }
 
+    const cardColor = roll.cardColor
+    const textResult = roll.textResult
+
     return {
-        embedResult
+        embedResult,
+        cardColor,
+        textResult
     }
 }
