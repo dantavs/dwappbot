@@ -1,6 +1,7 @@
 import { SlashCommandBuilder  } from "discord.js";
 import { Command } from "../interfaces/Command";
 import { EmbedBuilder } from 'discord.js'
+import { checkRoll } from "../utils/checkRoll";
 
 export const dwroll: Command = {
     data: new SlashCommandBuilder()
@@ -19,32 +20,14 @@ export const dwroll: Command = {
 
         let modifier = modifierString ? parseInt(modifierString) : 0
 
-        const die1 = Math.floor(Math.random() * 6 )+1; 
-        const die2 = Math.floor(Math.random() * 6 )+1;
-        
-        const result = die1 + die2 + modifier
-
-        let textResult = ""
-        let color = 0x990000
-
-        if (result > 9){
-            textResult = "Strong Success"
-            color = 0x00AA00
-        }else{
-            if (result > 6){
-                textResult = "Partial Success"
-                color = 0xf1c232
-            }else{
-                textResult = "Miss. Gain +1 XP."
-            }
-        }
+        const roll = checkRoll(modifier)
 
         const embedResult = new EmbedBuilder()
-            .setColor(color)
+            .setColor(roll.cardColor)
             .setTitle('Dungeon World roll!')
             .addFields(
-                {name: textResult , value: result.toString() },
-                {name: 'Result', value:`2d6: ${die1} + ${die2} \n Modifier: ${modifier}`},
+                {name: roll.textResult , value: roll.result.toString() },
+                {name: 'Result', value:`2d6: ${roll.die1} + ${roll.die2} \n Modifier: ${modifier}`},
             )
 
         await interaction.editReply({ embeds: [embedResult] })
