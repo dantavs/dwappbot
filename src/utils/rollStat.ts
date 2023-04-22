@@ -55,7 +55,7 @@ export function RollStat(character: any, statName: string, modifier: number){
 
         if (textResult === "Miss"){
             UpdateStat(character, "XP", 1)
-            embedResult.addFields({name: "+1 XP", value: `${character.name} ganhou 1 de XP, totalizando ${character.experience}`})
+            embedResult.addFields({name: "+1 XP", value: `${character.name} ganhou 1 de XP, totalizando ${character.experience +1}`})
         }
     }
 
