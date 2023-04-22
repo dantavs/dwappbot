@@ -1,7 +1,5 @@
 import { EmbedBuilder, SlashCommandBuilder  } from "discord.js";
 import { Command } from "../interfaces/Command";
-import { GetCharacater } from "../utils/getCharacter";
-import { RollStat } from "../utils/rollStat";
 
 export const help: Command = {
     data: new SlashCommandBuilder()

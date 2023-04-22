@@ -1,4 +1,5 @@
 import { Command } from "../interfaces/Command";
+import { bmDisparar } from "./basicMoves/bm-disparar";
 import { bmMatarPilhar } from "./basicMoves/bm-matarPilhar";
 import { dwroll } from "./dwRoll";
 import { GetChar } from "./getCharacter";
@@ -17,6 +18,6 @@ import { updateXP } from "./updateXP";
 export const CommandList: Command[] = [
     dwroll, GetChar, help,
     updateHP, updateXP, updateAmmo, updateRation,
-    bmMatarPilhar,
+    bmMatarPilhar, bmDisparar,
     rollStrength, rollDexterity, rollConstitution, rollIntelligence, rollWisdom, rollCharisma,
 ]
