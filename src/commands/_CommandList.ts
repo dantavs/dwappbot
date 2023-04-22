@@ -1,6 +1,7 @@
 import { Command } from "../interfaces/Command";
 import { dwroll } from "./dwRoll";
 import { GetChar } from "./getCharacter";
+import { help } from "./help";
 import { rollCharisma } from "./rollCharisma";
 import { rollConstitution } from "./rollConstitution";
 import { rollDexterity } from "./rollDexterity";
@@ -13,7 +14,7 @@ import { updateRation } from "./updateRation";
 import { updateXP } from "./updateXP";
 
 export const CommandList: Command[] = [
-    dwroll, GetChar,
+    dwroll, GetChar, help,
     updateHP, updateXP, updateAmmo, updateRation,
     rollStrength, rollDexterity, rollConstitution, rollIntelligence, rollWisdom, rollCharisma,
 ]
