@@ -1,12 +1,12 @@
 import { EmbedBuilder, SlashCommandBuilder  } from "discord.js";
-import { Command } from "../interfaces/Command";
-import { GetCharacater } from "../utils/getCharacter";
-import { UpdateStat } from "../utils/updateStat";
+import { Command } from "../../interfaces/Command";
+import { GetCharacater } from "../../utils/getCharacter";
+import { UpdateStat } from "../../utils/updateStat";
 
-export const updateAmmo: Command = {
+export const updateHP: Command = {
     data: new SlashCommandBuilder()
-        .setName("updtammo")
-        .setDescription("Update your Ammo.")
+        .setName("updthp")
+        .setDescription("Update your Hit Points.")
         .addStringOption((option) => 
             option
                 .setName("modifier")
@@ -21,7 +21,7 @@ export const updateAmmo: Command = {
 
         const { channelId, user } = interaction
         const playerId = user.id
-        const stat = 'Ammo'
+        const stat = 'HP'
 
         const character = await GetCharacater(playerId, channelId)
 

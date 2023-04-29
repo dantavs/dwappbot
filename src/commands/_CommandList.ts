@@ -9,16 +9,16 @@ import { bmNegociar } from "./basicMoves/bm-negociar";
 import { dwroll } from "./dwRoll";
 import { GetChar } from "./getCharacter";
 import { help } from "./help";
-import { rollCharisma } from "./rollCharisma";
-import { rollConstitution } from "./rollConstitution";
-import { rollDexterity } from "./rollDexterity";
-import { rollIntelligence } from "./rollIntelligence";
-import { rollStrength } from "./rollStrength";
-import { rollWisdom } from "./rollWisdom";
-import { updateAmmo } from "./updateAmmo";
-import { updateHP } from "./updateHP";
-import { updateRation } from "./updateRation";
-import { updateXP } from "./updateXP";
+import { rollCharisma } from "./rollStats/rollCharisma";
+import { rollConstitution } from "./rollStats/rollConstitution";
+import { rollDexterity } from "./rollStats/rollDexterity";
+import { rollIntelligence } from "./rollStats/rollIntelligence";
+import { rollStrength } from "./rollStats/rollStrength";
+import { rollWisdom } from "./rollStats/rollWisdom";
+import { updateAmmo } from "./updateStats/updateAmmo";
+import { updateHP } from "./updateStats/updateHP";
+import { updateRation } from "./updateStats/updateRation";
+import { updateXP } from "./updateStats/updateXP";
 import { bmDesafiarPerigoD } from "./basicMoves/bm-desafiarPerigo-d";
 import { bmDesafiarPerigoC } from "./basicMoves/bm-desafiarPerigo-con";
 import { bmDesafiarPerigoI } from "./basicMoves/bm-desafiarPerigo-i";
@@ -26,11 +26,13 @@ import { bmDesafiarPerigoS } from "./basicMoves/bm-desafiarPerigo-s";
 import { bmDesafiarPerigoCar } from "./basicMoves/bm-desafiarPerigo-car";
 import { bmDesafiarPerigoF } from "./basicMoves/bm-desafiarPerigo-f";
 import { inflictDamage } from "./inflictDamage";
+import { setDamage } from "./setStats/setDamage";
 
 export const CommandList: Command[] = [
     dwroll, GetChar, help,
     updateHP, updateXP, updateAmmo, updateRation,
     inflictDamage,
+    setDamage,
     bmMatarPilhar, bmDisparar, bmNegociar, bmDefender, bmFalarDificil, bmDiscernirRealidades, bmAjudarInterferir, 
     bmDesafiarPerigoF, bmDesafiarPerigoD, bmDesafiarPerigoC, bmDesafiarPerigoI, bmDesafiarPerigoS, bmDesafiarPerigoCar,
     rollStrength, rollDexterity, rollConstitution, rollIntelligence, rollWisdom, rollCharisma,

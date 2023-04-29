@@ -29,3 +29,6 @@ Discord bot to support Dungeon World plays
 /updtxp <modifier: required> : Add or subtract the Modifier of the PC's XP
 /updtammo <modifier: required> : Add or subtract the Modifier of the PC's Ammo
 /updtr <modifier: required> : Add or subtract the Modifier of the PC's Rations
+
+## Define new value for stats commands (Requires character created)
+/setdamage <modifier: required> : Define new value for the PC's damage

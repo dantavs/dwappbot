@@ -1,12 +1,12 @@
 import { SlashCommandBuilder  } from "discord.js";
-import { Command } from "../interfaces/Command";
-import { GetCharacater } from "../utils/getCharacter";
-import { RollStat } from "../utils/rollStat";
+import { Command } from "../../interfaces/Command";
+import { GetCharacater } from "../../utils/getCharacter";
+import { RollStat } from "../../utils/rollStat";
 
-export const rollIntelligence: Command = {
+export const rollConstitution: Command = {
     data: new SlashCommandBuilder()
-        .setName("int")
-        .setDescription("Do a Intelligence roll.")
+        .setName("con")
+        .setDescription("Do a Constitution roll.")
         .addStringOption((option) => 
             option
                 .setName("modifier")
@@ -23,7 +23,7 @@ export const rollIntelligence: Command = {
         const playerId = user.id
 
         const character = await GetCharacater(playerId, channelId)
-        const check = RollStat(character.character, 'Intelligence', modifier)
+        const check = RollStat(character.character, 'Constitution', modifier)
 
         await interaction.editReply({ embeds: [check.embedResult] })
     }

@@ -30,6 +30,9 @@ export const help: Command = {
         updateCommandsList += "**/updtxp** : Add or subtract the Modifier of the PC's XP\n"
         updateCommandsList += "**/updtammo** : Add or subtract the Modifier of the PC's Ammo\n"
         updateCommandsList += "**/updtr** : Add or subtract the Modifier of the PC's Rations\n"
+        
+        let setStatCommandsList = "*<command> <modifier: required>*\n"
+        setStatCommandsList += "**/setdamage** : Define o dado de Dano do seu personagem\n"
 
         const embedResult = new EmbedBuilder()
             .setColor(0x0099FF)
@@ -38,6 +41,7 @@ export const help: Command = {
             .addFields({name: 'Stats commands *(Better with character created in the channel)*', value: statCommandsList})
             .addFields({name: 'Basic Moves commands *(Better with character created in the channel)*', value: basicMovesCommandsList})
             .addFields({name: 'Update commands *(Requires character created)*', value: updateCommandsList})
+            .addFields({name: 'Define stats commands *(Requires character created)*', value: setStatCommandsList})
 
         await interaction.editReply({ embeds: [embedResult] })
     }

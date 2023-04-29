@@ -1,38 +1,38 @@
 import { EmbedBuilder, SlashCommandBuilder  } from "discord.js";
-import { Command } from "../interfaces/Command";
-import { GetCharacater } from "../utils/getCharacter";
-import { UpdateStat } from "../utils/updateStat";
+import { Command } from "../../interfaces/Command";
+import { GetCharacater } from "../../utils/getCharacter";
+import { SetStat } from "../../utils/setStat";
 
-export const updateHP: Command = {
+export const setDamage: Command = {
     data: new SlashCommandBuilder()
-        .setName("updthp")
-        .setDescription("Update your Hit Points.")
+        .setName("setdamage")
+        .setDescription("Definr your Damage value.")
         .addStringOption((option) => 
             option
-                .setName("modifier")
+                .setName("value")
                 .setDescription("Modifier in the DW roll.")
                 .setRequired(true)
         ),
     run: async (interaction) => {
         await interaction.deferReply()
         
-        const modifierString = interaction.options.getString('modifier')
+        const modifierString = interaction.options.getString('value')
         let modifier = modifierString ? parseInt(modifierString) : 0
 
         const { channelId, user } = interaction
         const playerId = user.id
-        const stat = 'HP'
+        const stat = 'Damage'
 
         const character = await GetCharacater(playerId, channelId)
 
         let embedResult = new EmbedBuilder()
 
         if (character.character){
-            const check = await UpdateStat(character.character, stat, modifier)
+            const check = await SetStat(character.character, stat, modifier)
             embedResult = check.embedResult
         }else{
             embedResult
-            .setTitle(`Update ${stat}`)
+            .setTitle(`Set ${stat}`)
             .addFields({name: 'There is not any registered character in this channel', value: ' '})
         }
 

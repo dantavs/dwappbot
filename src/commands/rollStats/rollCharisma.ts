@@ -1,12 +1,12 @@
 import { SlashCommandBuilder  } from "discord.js";
-import { Command } from "../interfaces/Command";
-import { GetCharacater } from "../utils/getCharacter";
-import { RollStat } from "../utils/rollStat";
+import { Command } from "../../interfaces/Command";
+import { GetCharacater } from "../../utils/getCharacter";
+import { RollStat } from "../../utils/rollStat";
 
-export const rollDexterity: Command = {
+export const rollCharisma: Command = {
     data: new SlashCommandBuilder()
-        .setName("dex")
-        .setDescription("Do a Strength roll.")
+        .setName("cha")
+        .setDescription("Do a Charisma roll.")
         .addStringOption((option) => 
             option
                 .setName("modifier")
@@ -23,7 +23,7 @@ export const rollDexterity: Command = {
         const playerId = user.id
 
         const character = await GetCharacater(playerId, channelId)
-        const check = RollStat(character.character, 'Dexterity', modifier)
+        const check = RollStat(character.character, 'Charisma', modifier)
 
         await interaction.editReply({ embeds: [check.embedResult] })
     }
