@@ -36,7 +36,7 @@ model Character {
   charisma      Int @default(0)
   modCha        Int @default(0)
   ammo          Int @default(0)
-  maxAmoo       Int @default(0)
+  maxAmmo       Int @default(0)
   ration        Int @default(0)
   portrait      String @default("")
   channelId     String
