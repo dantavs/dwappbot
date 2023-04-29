@@ -30,14 +30,15 @@ export const inflictDamage: Command = {
         
         if (character.character){
 
-            const damageDie = Math.floor(Math.random() * character.character.damage )+1; 
+            const charDamageDie = character.character.damage == 0 ? character.character.damage : 1
+            const damageDie = Math.floor(Math.random() * charDamageDie )+1; 
             const totalDamage = damageDie + modifier
             
             if (character.character?.portrait){
                 moveResult.setThumbnail(character.character.portrait)
             }
 
-            moveResult.addFields({name: totalDamage.toString(), value: `${damageDie} (Dado de Dano: D${character.character.damage}) + ${modifier} (Modificador)`})
+            moveResult.addFields({name: totalDamage.toString(), value: `${damageDie} (Dado de Dano: D${charDamageDie}) + ${modifier} (Modificador)`})
         }else{
             moveResult.addFields({name: "Você não possui personagem criado neste canal", value: " "})
         }
