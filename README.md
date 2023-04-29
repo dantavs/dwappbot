@@ -4,6 +4,7 @@ Discord bot to support Dungeon World plays
 ## Main commands
 /dwr <modifier (optional)> : Roll 2d6 + modifier
 /pc : Show the PC registered for the user
+/damage <modifier (optional)> : Inflict PC's damage
 
 ## Stats commands (Better with character created in the channel)
 /str <modifier: optional> : Roll + Strength + Modifier (if there is no PC registered, it assumed 0 as Strength value)

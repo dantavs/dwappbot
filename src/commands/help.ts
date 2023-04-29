@@ -10,14 +10,10 @@ export const help: Command = {
 
         let commandsList = "**/dwr** *<modifier (optional)>* : Roll 2d6 + modifier\n"
         commandsList += "**/pc** : Show the PC registered for the user\n"
+        commandsList += "**/damage** : Inflict PC's damage"
         
         let statCommandsList = "*<commmand> <modifier: optional> (if there is no PC registered, it assumed 0 as the stat value)*\n"
-        statCommandsList += "**/str**\n"
-        statCommandsList += "**/dex**\n"
-        statCommandsList += "**/con**\n"
-        statCommandsList += "**/int**\n"
-        statCommandsList += "**/wis**\n"
-        statCommandsList += "**/cha**\n"
+        statCommandsList += "**/str /dex /con /int /wis /cha**\n"
         
         let basicMovesCommandsList = "*/<command> <modifier: optional>*\n"
         basicMovesCommandsList += "**/matar** : Executar o movimento básico Matar e Pilhar\n"
