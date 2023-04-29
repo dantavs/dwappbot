@@ -31,6 +31,7 @@ export const GetChar: Command = {
                 { name: ' ', value: ' ', inline: false},
                 { name: 'Ammo ', value: character.character.ammo.toString(), inline: true},
                 { name: 'Ration ', value: character.character.ration.toString(), inline: true},
+                { name: 'Damage ', value: `D${character.character.damage}`, inline: true},
                 { name: ' ', value: ' ', inline: false},
                 { name: 'Hit Points', value: `${character.character.hitPoints.toString()}/${character.character.maxHP}`, inline: true},
                 { name: 'Level', value: character.character.level.toString(), inline: true},
