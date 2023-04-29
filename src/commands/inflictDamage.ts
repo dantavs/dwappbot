@@ -30,7 +30,7 @@ export const inflictDamage: Command = {
         
         if (character.character){
 
-            const charDamageDie = character.character.damage == 0 ? character.character.damage : 1
+            const charDamageDie = character.character.damage > 0 ? character.character.damage : 1
             const damageDie = Math.floor(Math.random() * charDamageDie )+1; 
             const totalDamage = damageDie + modifier
             
